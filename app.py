@@ -1,7 +1,10 @@
 from flask import Flask, request, render_template_string
 import openai
+import os
+from dotenv import load_dotenv
 
-openai.api_key = ""
+load_dotenv()  # Loads .env file
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
 
